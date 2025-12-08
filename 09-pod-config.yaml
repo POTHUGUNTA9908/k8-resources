@@ -5,11 +5,8 @@ metadata:
 spec:
   containers:
     - name: app
+      command: ["/bin/sh", "-c", "printenv"]
       image: busybox:latest
       envFrom:
-       - configMapRef:
-           name: myconfigmap
-
-
-
-
+        - configMapRef:
+            name: myconfigmap
