@@ -9,7 +9,3 @@ spec:
       envFrom:
         - configMapRef:
             name: myconfig
-
-
-
-
