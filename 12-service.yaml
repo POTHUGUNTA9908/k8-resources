@@ -3,7 +3,7 @@ apiversion: v1
 metadata:
   name: nginx
 spec:
-    selector:
+  selector:
     project: expense
     component: backend
     environment: dev
