@@ -31,7 +31,7 @@ kind: Service
 metadata:
   name: nginx
 spec:
-  type: NodePort
+  type: loadbalancer
   selector:
     app: nginx
     tier: frontend
