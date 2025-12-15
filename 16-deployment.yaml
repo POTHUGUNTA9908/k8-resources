@@ -31,7 +31,7 @@ kind: Service
 metadata:
   name: nginx
 spec:
-  type: load balancer
+  type: LoadBalancer
   selector:
     app: nginx
     tier: frontend
@@ -40,4 +40,3 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-      nodePort: 30007
