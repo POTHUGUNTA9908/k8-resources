@@ -4,7 +4,7 @@ metadata:
   name: nginx
   labels:
     app:frontend
-     tier: web
+     tier:web
 spec:
   # modify replicas according to your case
   replicas: 3
