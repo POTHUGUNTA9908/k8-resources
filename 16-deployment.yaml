@@ -22,24 +22,22 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: pothugunta/nginx:1.0
+          image: pothugunta9908/deployment:1.0
           ports:
             - containerPort: 80
-
-
-
+---
 apiVersion: v1
 kind: Service
 metadata:
   name: nginx
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
-   app: nginx
-  tier: frontend
-  purpose: deployment
+    app: nginx
+    tier: frontend
+    purpose: deployment
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-      nodeport:30007
+      nodePort: 30007
