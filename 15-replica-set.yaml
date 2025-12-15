@@ -3,10 +3,9 @@ kind: ReplicaSet
 metadata:
   name: nginx
   labels:
-    app:frontend
-     tier:web
+    app: frontend
+    tier: frontend
 spec:
-  # modify replicas according to your case
   replicas: 3
   selector:
     matchLabels:
@@ -17,5 +16,5 @@ spec:
         tier: frontend
     spec:
       containers:
-      - name: nginx
-        image: nginx
+        - name: nginx
+          image: nginx
