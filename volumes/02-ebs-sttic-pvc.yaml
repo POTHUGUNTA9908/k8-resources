@@ -10,3 +10,27 @@ spec:
   resources:
     requests:
       storage: 20Gi
+
+
+
+
+
+  -----------
+
+
+
+  apiVersion: v1
+kind: Pod
+metadata:
+  name: ebs-static
+spec:
+  containers:
+  - name: nginx
+    image: public.ecr.aws/amazonlinux/amazonlinux
+    volumeMounts:
+    - name: persistent-storage
+      mountPath: /usr/share/nginx/html
+  volumes:
+  - name: persistent-storage
+    persistentVolumeClaim:
+      claimName: ebs-static
