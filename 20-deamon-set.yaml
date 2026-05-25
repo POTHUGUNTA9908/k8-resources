@@ -15,8 +15,6 @@ spec:
         name: fluentd-elasticsearch
     spec:
       tolerations:
-      # these tolerations are to have the daemonset runnable on control plane nodes
-      # remove them if your control plane nodes should not run pods
       - key: node-role.kubernetes.io/control-plane
         operator: Exists
         effect: NoSchedule
@@ -35,10 +33,7 @@ spec:
         volumeMounts:
         - name: varlog
           mountPath: /var/log
-          readonly: true
-      # it may be desirable to set a high priority class to ensure that a DaemonSet Pod
-      # preempts running Pods
-      # priorityClassName: important
+          readOnly: true        # ✅ Fixed: was "readonly"
       terminationGracePeriodSeconds: 30
       volumes:
       - name: varlog
